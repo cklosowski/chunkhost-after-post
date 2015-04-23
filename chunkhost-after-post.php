@@ -13,17 +13,18 @@ if ( ! defined( 'CAP_PLUGIN_URL' ) ) {
 	define( 'CAP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 }
 
-function cap_afteR_post_content( $content ) {
+function cap_afteR_post_content() {
 	if ( ! is_single() ) {
-		return $content;
+		return;
 	}
 
-	$content .= '<div style="border: 1px solid #eaeaea; padding: 15px 10px;">';
-	$content .= 'This Site is Hosted on a <strong><a href="https://kungfugrep.com/ChunkHost">ChunkHost VPS</a></strong>. I\'ve been using ChunkHost for the last 4 years as my Go-To VPS provider. ';
-	$content .= 'Their killer customer service, unbeatable pricing, and rock solid hardware is what keeps me here. ';
-	$content .= '<strong><em><a href="https://kungfugrep.com/ChunkHost">Get Started Now</a></em></strong> with their most popular plan at <strong>$9/month</strong>.';
-	$content .= '</div>';
-
-	return $content;
+	?>
+	<h4 class="heading"><i class="fa fa-info"></i>About This Site</h4>
+	<div style="border: 1px solid #eaeaea; padding: 15px 10px; margin-bottom: 15px;">
+	This Site is Hosted on a <strong><a href="https://kungfugrep.com/ChunkHost">ChunkHost VPS</a></strong>. I've been using ChunkHost for the last 4 years as my Go-To VPS provider.
+	Their killer customer service, unbeatable pricing, and rock solid hardware is what keeps me here.
+	<strong><em><a href="https://kungfugrep.com/ChunkHost">Get Started Now</a></em></strong> with their most popular plan at <strong>$9/month</strong>.
+	</div>
+	<?php
 }
-add_filter( 'the_content', 'cap_after_post_content', 99, 1 );
+add_action( 'hueman_after_author_bio', 'cap_after_post_content', 99 );
