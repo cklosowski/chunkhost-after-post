@@ -21,9 +21,12 @@ function cap_afteR_post_content() {
 	?>
 	<h4 class="heading"><i class="fa fa-info"></i>About This Site</h4>
 	<div style="border: 1px solid #eaeaea; padding: 15px 10px; margin-bottom: 15px;">
+	<div style="float:left; margin-right: 15px; padding-top: 20px;"><img src="<?php echo CAP_PLUGIN_URL; ?>images/chunk-host-logo.png" /></div>
+	<div style="padding-left: 90px;">
 	This Site is Hosted on a <strong><a href="https://kungfugrep.com/ChunkHost">ChunkHost VPS</a></strong>. I've been using ChunkHost for the last 4 years as my Go-To VPS provider.
 	Their killer customer service, unbeatable pricing, and rock solid hardware is what keeps me here.
 	<strong><em><a href="https://kungfugrep.com/ChunkHost">Get Started Now</a></em></strong> with their most popular plan at <strong>$9/month</strong>.
+	</div>
 	</div>
 	<?php
 }
